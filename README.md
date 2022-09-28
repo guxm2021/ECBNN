@@ -36,7 +36,17 @@ CUBLAS_WORKSPACE_CONFIG=:4096:8 python evaluate.py --model_name ECBNN
 ```
 
 #### Multi-view Lip Reading
-* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also upload our [processed OuluVS2 dataset]()
+* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also upload our [processed OuluVS2 dataset](). You can put the data as follows:
+
+```
+OuluVS2
+`-- data
+    `-- unipadding
+        |-- train.pt
+        |-- valid.pt
+        |-- test.pt
+```
+
 * To train our ECBNN model from scratch (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
 
 ```
