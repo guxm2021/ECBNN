@@ -13,6 +13,9 @@ Human intelligence has shown remarkably lower latency and higher precision than 
 
 ## How to run
 ### Experiment
+NOTE: All our experiments are run on an AMD EPYC 7302P 16-core CPU and an RTX A5000 GPU.
+
+Experiment settings:
 * Python 3.8.13
 * PyTorch 1.8.1
 * CUDA 11.1
@@ -33,7 +36,8 @@ CUBLAS_WORKSPACE_CONFIG=:4096:8 python evaluate.py --model_name ECBNN
 ```
 
 #### Multi-view Lip Reading
-To train and evaluate our ECBNN model (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
+* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also upload our [processed OuluVS2 dataset]()
+* To train our ECBNN model from scratch (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
 
 ```
 cd OuluVS2
@@ -45,6 +49,9 @@ If you use ECBNN or this codebase in your own work, please cite our paper:
 ```
 
 ```
+
+## Acknowledgement
+Part of the code is borrowed from [CIDA](https://github.com/hehaodele/CIDA). We thank the authors for releasing their codes.
 
 ## License
 MIT license
