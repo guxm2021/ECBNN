@@ -30,7 +30,7 @@ pip install progressbar
 ### Running experiments
 
 #### Streaming Rotating MNIST $\rightarrow$ USPS
-* The streaming rotating MNIST and USPS data are generated and processed according to our paper. Please download our processed [Streaming Rotating MNIST $\rightarrow$ USPS dataset](). You can put the data as follows:
+* The streaming rotating MNIST and USPS data are generated and processed according to our paper. Please download our processed [Streaming Rotating MNIST $\rightarrow$ USPS dataset](https://drive.google.com/drive/folders/11OywBNJXOKMUDv7Hgraf15EZhU3-1Xwr?usp=sharing). You can put the data as follows:
 
 ```
 Streaming_Rotating_MNIST_USPS
@@ -47,7 +47,7 @@ Streaming_Rotating_MNIST_USPS
 
 * To better understand our problem setting of streaming domain adaptation, we visualize our data as follows. The left shows the source domain streaming data (MNIST) while the right shows the target domain streaming data (USPS):
 <p align="center">
-<img src="assets/stream.gif" alt="" data-canonical-src="assets/stream.gif" width="50%"/>
+<img src="assets/stream.gif" alt="" data-canonical-src="assets/stream.gif" width="25%"/>
 </p>
 
 * To train and evalute our ECBNN on source-testing and target-testing set: (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
