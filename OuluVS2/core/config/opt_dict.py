@@ -1,7 +1,7 @@
 from easydict import EasyDict
 import os
 
-def get_opt(model_name, seed, lr, lambda_gan, match=1e-5, inf=0.1):
+def get_opt(model_name):
     # set experiment configs
     opt = EasyDict()
     opt.model = model_name
@@ -22,10 +22,9 @@ def get_opt(model_name, seed, lr, lambda_gan, match=1e-5, inf=0.1):
     # training parameteres
     opt.num_epoch = 100
     opt.batch_size = 100
-    # lr = 2e-4
-    opt.lr_gen = lr
-    opt.lr_dis = lr
-    opt.lr = lr
+    opt.lr_gen = 2e-4
+    opt.lr_dis = 2e-4
+    opt.lr = 2e-4
     opt.weight_decay = 5e-4
     opt.beta1 = 0.9
     
@@ -54,11 +53,11 @@ def get_opt(model_name, seed, lr, lambda_gan, match=1e-5, inf=0.1):
         opt.lambda_G_match = 0.05
 
     opt.n_frame = 10 # number of frames in a batch
-    opt.lambda_gan = lambda_gan
+    opt.lambda_gan = 1.0
     
     # experimental folder
-    opt.exp = '_LipReading_' + opt.model
-    opt.outf = './dump_Sept/' + 'seed' + str(opt.seed) + '/' + opt.exp
+    opt.exp = 'Multiview_Lip_Reading_' + opt.model
+    opt.outf = './dump/' + opt.exp
     os.system('mkdir -p ' + opt.outf)
     print('Traning result will be saved in ', opt.outf)
 

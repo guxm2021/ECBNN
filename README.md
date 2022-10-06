@@ -20,23 +20,41 @@ Experiment settings:
 * PyTorch 1.8.1
 * CUDA 11.1
 
+You may need to install the following packages:
+
+```
+pip install easydict
+pip install progressbar
+```
+
 ### Running experiments
 
 #### Streaming Rotating MNIST $\rightarrow$ USPS
-To train and evalute our ECBNN on source-testing and target-testing set: (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix )
+* The streaming rotating MNIST and USPS data are generated and processed according to our paper. Please download our processed [Streaming Rotating MNIST $\rightarrow$ USPS dataset](). You can put the data as follows:
+
+```
+Streaming_Rotating_MNIST_USPS
+`-- data
+    `-- MNIST
+        |-- train_seq.pt
+        |-- valid_seq.pt
+        |-- test_seq.pt
+    `-- USPS
+        |-- train_seq.pt
+        |-- valid_seq.pt
+        |-- test_seq.pt
+```
+
+* To train and evalute our ECBNN on source-testing and target-testing set: (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
+
 ```
 cd Streaming_Rotating_MNIST_USPS
 CUBLAS_WORKSPACE_CONFIG=:4096:8 python run.py --model_name ECBNN
 ```
 
-To evaluate the trained model on OOD-testing set:
-
-```
-CUBLAS_WORKSPACE_CONFIG=:4096:8 python evaluate.py --model_name ECBNN
-```
 
 #### Multi-view Lip Reading
-* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also upload our [processed OuluVS2 dataset](). You can put the data as follows:
+* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also upload our processed [OuluVS2 dataset](https://drive.google.com/drive/folders/1tIahsionfO_lSEvJUnAdyA-IDQbb5KIc?usp=sharing). You can put the data as follows:
 
 ```
 OuluVS2
@@ -59,9 +77,6 @@ If you use ECBNN or this codebase in your own work, please cite our paper:
 ```
 
 ```
-
-## Acknowledgement
-Part of the code is borrowed from [CIDA](https://github.com/hehaodele/CIDA). We thank the authors for releasing their codes.
 
 ## License
 MIT license

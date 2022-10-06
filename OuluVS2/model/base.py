@@ -249,13 +249,6 @@ class BaseModel(nn.Module):
             self.g_seq, self.top3_pred = vote_video_classification_result(f_seq, y_seq)
             self.acc_update_oulu()
             
-        #     # accumulate dataset
-        #     sing_batch_size = x_seq.shape[0]
-        #     sing_batch_size_source = self.is_source.sum()
-        #     sing_batch_size_target = sing_batch_size - sing_batch_size_source
-        #     all_batch_size += sing_batch_size
-        #     print(f"Number of batch size: {sing_batch_size}. Number of source batch size: {sing_batch_size_source}. Number of target batch size: {sing_batch_size_target}")
-        # print(f'Number of sequences: {all_batch_size}, Total cost time: {all_time}, Average testing time: {round(all_time / 4 / all_batch_size * 100, 7)}')
         # accuracy message
         if is_eval:
             self.acc_msg = f'Eval[{epoch+1}] Oulu: {self.acc_domain} src: {self.acc_source} tgt:{self.acc_target} test_acc:{self.total_acc:.3f} top3_acc:{self.top3_acc:.3f}'
