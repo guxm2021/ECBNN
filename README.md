@@ -45,6 +45,11 @@ Streaming_Rotating_MNIST_USPS
         |-- test_seq.pt
 ```
 
+* To better understand our problem setting of streaming domain adaptation, we visualize our data as follows. The left shows the source domain streaming data (MNIST) while the right shows the target domain streaming data (USPS):
+<p align="center">
+<img src="assets/stream.gif" alt="" data-canonical-src="assets/stream.gif" width="50%"/>
+</p>
+
 * To train and evalute our ECBNN on source-testing and target-testing set: (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
 
 ```
@@ -64,6 +69,8 @@ OuluVS2
         |-- valid.pt
         |-- test.pt
 ```
+
+* The lip videos from $0 \degree$ view are the source domain while the lip videos from $30 \degree, 45 \degree, 60 \degree, 90 \degree$ views are the target domain.
 
 * To train our ECBNN model from scratch (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
 
