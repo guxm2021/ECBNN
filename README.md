@@ -30,7 +30,7 @@ pip install progressbar
 ### Running experiments
 
 #### Streaming Rotating MNIST $\rightarrow$ USPS
-* The streaming rotating MNIST and USPS data are generated and processed according to our paper. Please download our processed [Streaming Rotating MNIST $\rightarrow$ USPS dataset](https://drive.google.com/drive/folders/11OywBNJXOKMUDv7Hgraf15EZhU3-1Xwr?usp=sharing). You can put the data as follows:
+* The streaming rotating MNIST and USPS data are generated and processed according to our paper. Please download our processed [Streaming Rotating MNIST $\rightarrow$ USPS dataset](https://drive.google.com/drive/folders/11OywBNJXOKMUDv7Hgraf15EZhU3-1Xwr?usp=sharing) following MIT License. You can put the data as follows:
 
 ```
 Streaming_Rotating_MNIST_USPS
