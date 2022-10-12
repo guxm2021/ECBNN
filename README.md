@@ -45,12 +45,12 @@ Streaming_Rotating_MNIST_USPS
         |-- test_seq.pt
 ```
 
-* To better understand our problem setting of streaming domain adaptation, we visualize our data as follows. The left shows the source domain streaming data (MNIST) while the right shows the target domain streaming data (USPS):
+* To better understand our problem setting of test-time streaming domain adaptation, we visualize our data as follows. The left shows the streaming data (MNIST) on the source domain, while the right shows the streaming data (USPS) on the target domain:
 <p align="center">
 <img src="assets/stream.gif" alt="" data-canonical-src="assets/stream.gif" width="25%"/>
 </p>
 
-* To train and evalute our ECBNN on source-testing and target-testing set: (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
+* To train and further evaluate our ECBNN on source-testing and target-testing set: (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as a prefix)
 
 ```
 cd Streaming_Rotating_MNIST_USPS
@@ -59,7 +59,7 @@ CUBLAS_WORKSPACE_CONFIG=:4096:8 python run.py --model_name ECBNN
 
 
 #### Multi-view Lip Reading
-* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also upload our processed [OuluVS2 dataset](https://drive.google.com/drive/folders/1tIahsionfO_lSEvJUnAdyA-IDQbb5KIc?usp=sharing). You can put the data as follows:
+* We followed the paper *End-to-End Multi-View Lipreading, S. Petridis, Y. Wang, Z. Li, M. Pantic. British Machine Vision Conference. London, September 2017* to download and process the dataset. For your convenience, we also uploaded our processed [OuluVS2 dataset](https://drive.google.com/drive/folders/1tIahsionfO_lSEvJUnAdyA-IDQbb5KIc?usp=sharing) following MIT License. You can put the data as follows:
 
 ```
 OuluVS2
@@ -72,7 +72,7 @@ OuluVS2
 
 * The lip videos from $0 \degree$ view are the source domain while the lip videos from $30 \degree, 45 \degree, 60 \degree, 90 \degree$ views are the target domain.
 
-* To train our ECBNN model from scratch (To ensure the reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as prefix)
+* To train our ECBNN model from scratch (To ensure reproducibility, use 'CUBLAS_WORKSPACE_CONFIG=:4096:8' as a prefix)
 
 ```
 cd OuluVS2
