@@ -82,7 +82,11 @@ CUBLAS_WORKSPACE_CONFIG=:4096:8 python run.py --model_name ECBNN
 ## Citation
 If you use ECBNN or this codebase in your own work, please cite our paper:
 ```
-
+@inproceedings{huangextrapolative,
+  title={Extrapolative Continuous-time Bayesian Neural Network for Fast Training-free Test-time Adaptation},
+  author={Huang, Hengguan and Gu, Xiangming and Wang, Hao and Xiao, Chang and Liu, Hongfu and Wang, Ye},
+  booktitle={Advances in Neural Information Processing Systems}
+}
 ```
 
 ## License
